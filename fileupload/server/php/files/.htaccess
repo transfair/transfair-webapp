@@ -1,0 +1,4 @@
+ForceType application/octet-stream
+<FilesMatch "(?i)\.(pdf|doc?x|odx)$">
+  ForceType none
+</FilesMatch>
