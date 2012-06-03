@@ -11,8 +11,18 @@ class Welcome extends CI_Controller
 	}
 
     function index()
-	{
-	    $this->load->view('home');
+    {
+         $data = array(
+            'head' => $this->load->view('templates/head', array(), TRUE),
+            'header' => $this->load->view('templates/header', array(), TRUE),
+            'hero' => $this->load->view('templates/hero', array(), TRUE),
+            'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
+            'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
+            'footer' => $this->load->view('templates/footer', array(), TRUE)
+            'foot' => $this->load->view('templates/foot', array(), TRUE)
+        );
+
+	    $this->load->view('home', $data);
 	}
     
     function old_index()

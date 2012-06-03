@@ -14,20 +14,18 @@
 
             <!-- CONTENT GOES HERE -->
             <div class="content">
-                <p>
-                    <header><h2>We find international jobs that match your skillset.</h2></header>
-                    <ul>
-                        <li>Fair wages (see here).</li>
-                        <li>Opportunity to work from home for international customers.</li>
-<li>Improve your skills with the feedback from mentors and customers.</li>
-                    </ul>
-                </p> 
+                <h2>We find international jobs that match your skillset.</h2>
+                <ul>
+                    <li>Fair wages (see here).</li>
+                    <li>Opportunity to work from home for international customers.</li>
+                    <li>Improve your skills with the feedback from mentors and customers.</li>
+                </ul>
+            </div>    
             
                 <form action='#' method='post' class="well">
                     <?php echo $form; ?>
-                    <input type='submit' value='Apply now!' />
+                    <input type='submit' value='Apply now!' class="btn btn-primary" />
                 </form>
-            </div>    
         </div> <!-- /.span8 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
