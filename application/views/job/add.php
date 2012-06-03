@@ -10,12 +10,12 @@
 <div class="container">
     <?php echo $header; ?>
     <div class="row">
-        <div class="span8">
+        <div class="span9">
             <?php echo $navtabs; ?>
 
             <input type="file" name="file_upload" id="file_upload" />
 
-        </div> <!-- /.span8 -->
+        </div> <!-- /.span9 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
 </div> <!-- /.container -->

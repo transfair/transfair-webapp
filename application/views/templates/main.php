@@ -12,9 +12,11 @@
 		<div class="span9">
             <?php echo $hero; ?>				
 			<?php echo $navtabs; ?>
-				<!-- CONTENT GOES HERE -->
-				<?php echo $content; ?>
-		</div> <!-- /.span8 -->
+                
+            <div class="content">
+                <?php echo $content; ?>
+            </div>
+		</div> <!-- /.span9 -->
 		<?php echo $sidebar; ?>
 	</div> <!-- /.row -->
 	<?php echo $footer; ?>
