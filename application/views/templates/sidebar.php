@@ -1,3 +1,3 @@
-		<div class="span4">
+		<div class="span3">
 			Login form goes here
 		</div>

@@ -9,14 +9,20 @@
 <div class="container">
 	<?php include "header.php"; ?>
 	<div class="row">
-		<div class="span8">
+		<div class="span9">
+			<?php include "hero.php"; ?>
 			<?php include "nav-tabs.php"; ?>
-				
-				<!-- CONTENT GOES HERE -->
-				
+			
+			<div class="content">
+				<p>We support educated people in low income countries to provide and sell services to the markets of high income countries.</p>
+				<a class="btn btn-large btn-primary" href="#">Create a job</a> <a class="btn btn-large btn-primary" href="#">Become a partner</a>
+				<p>Or <a href="#">learn more about us</a> and what we do.</p>
+			</div>
+			
 		</div> <!-- /.span8 -->
 		<?php include "sidebar.php"; ?> 
 	</div> <!-- /.row -->
+	<?php include "footer.php"; ?>
 </div> <!-- /.container -->
 <?php include "foot.php"; ?>
 </body></html>

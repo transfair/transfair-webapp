@@ -10,7 +10,12 @@ class Welcome extends CI_Controller
 		$this->load->library('tank_auth');
 	}
 
-	function index()
+    function index()
+	{
+	    $this->load->view('home');
+	}
+    
+    function old_index()
 	{
 		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/auth/login/');
