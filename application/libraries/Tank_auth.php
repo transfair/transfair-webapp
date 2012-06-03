@@ -185,6 +185,7 @@ class Tank_auth
 				'password'	=> $hashed_password,
 				'email'		=> $email,
 				'last_ip'	=> $this->ci->input->ip_address(),
+				//TODO usertype
 			);
 
 			if ($email_activation) {
