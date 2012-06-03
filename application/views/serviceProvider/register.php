@@ -10,6 +10,7 @@
     <?php echo $header; ?>
     <div class="row">
         <div class="span8">
+            <?php echo $hero; ?>		
             <?php echo $navtabs; ?>
 
             <!-- CONTENT GOES HERE -->
@@ -29,6 +30,7 @@
         </div> <!-- /.span8 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
+    <?php echo $footer; ?>		
 </div> <!-- /.container -->
 <?php echo $foot; ?>
 </body></html>

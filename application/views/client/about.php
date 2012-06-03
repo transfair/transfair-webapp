@@ -10,13 +10,20 @@
     <?php echo $header; ?>
     <div class="row">
         <div class="span8">
-            <?php echo $navtabs; ?>
+            <?php echo $hero; ?>				
+			<?php echo $navtabs; ?>
 
             <!-- CONTENT GOES HERE -->
-
+            <div class="content">
+                <p>
+                    Some smart text that should convey you into becoming a client! <br />
+                    <?php echo anchor('client/register','Alright, I wanna join!'); ?>
+                </p>
+            </div>
         </div> <!-- /.span8 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
+	<?php echo $footer; ?>
 </div> <!-- /.container -->
 <?php echo $foot; ?>
 </body></html>

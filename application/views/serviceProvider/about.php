@@ -18,6 +18,7 @@
         </div> <!-- /.span8 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
+    <?php echo $footer; ?>		
 </div> <!-- /.container -->
 <?php echo $foot; ?>
 </body></html>

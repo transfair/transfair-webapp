@@ -10,7 +10,6 @@
 	<?php echo $header; ?>
 	<div class="row">
 		<div class="span9">
-			<?php echo $head; ?>				
             <?php echo $hero; ?>				
 			<?php echo $navtabs; ?>
 				<!-- CONTENT GOES HERE -->
