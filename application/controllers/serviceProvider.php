@@ -10,7 +10,13 @@ class ServiceProvider extends CI_Controller
 		$this->load->library('tank_auth');
 		$this->load->library('CleanCRMForm');
 	}
-    
+
+    function debug(){
+        $test = $this->cleancrmform->cleanCRMForm("ServiceProviderRegistration");
+
+        var_dump($test);
+    }
+
     function about()
     {
         $data = array(
