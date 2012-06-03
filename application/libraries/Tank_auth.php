@@ -71,6 +71,7 @@ class Tank_auth
 						$this->ci->session->set_userdata(array(
 								'user_id'	=> $user->id,
 								'username'	=> $user->username,
+								'usertype'	=> $user->usertype,
 								'status'	=> ($user->activated == 1) ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED,
 						));
 
@@ -149,6 +150,11 @@ class Tank_auth
 		return $this->ci->session->userdata('username');
 	}
 
+	function get_usertype()
+	{
+		return $this->ci->session->userdata('usertype');
+	}
+	
 	/**
 	 * Create new user on the site and return some data about it:
 	 * user_id, username, password, email, new_email_key (if any).
