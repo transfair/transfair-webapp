@@ -1,19 +1,31 @@
-.page-header {
-	border-bottom: none;
+body {
+	background: url(../img/bg.png);
 }
 
-.page-header h1 a {
+.container {
+	background: #fff;
+	min-height: 100%;
+	border: 12px solid #fff;
+	box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+	margin-top: 24px;
+}
+
+.header {
+	margin-bottom: 1em;
+}
+
+.header h1 a {
 	display: block;
 	text-indent: -999em;
 	overflow: hidden;
 	width: 192px;
 	height: 50px;
-	background-image: url(/img/logo.png);
+	background-image: url(../img/logo.png);
 	margin-left: 12px;
 }
 
 .hero {
-	background-image: url(/img/keyboard.jpg);
+	background-image: url(../img/keyboard.jpg);
 	background-size: cover;
 	min-height: 150px;
 	margin-bottom: 1em;
@@ -24,7 +36,7 @@
 	width: 30%;
 	padding: 2em 24px;
 	font-family: Georgia;
-	font-size: 1.8em;
+	font-size: 2.4em;
 	line-height: 1.5;
 	font-style: italic;
 	font-weight: normal;
@@ -52,6 +64,18 @@ label {
 	float: right;
 	margin: 1.5em 0;
 	width: 50%;
+}
+
+.big-footer {
+	margin-top: 3em;
+}
+
+.big-footer .span3 {
+	border-top: 1px solid #ddd;
+}
+
+.big-footer h2 {
+	font-size: 14px;
 }
 
 .connect,

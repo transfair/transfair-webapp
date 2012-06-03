@@ -9,7 +9,7 @@
 <div class="container">
 	<?php include "header.php"; ?>
 	<div class="row">
-		<div class="span8">
+		<div class="span9">
 			<?php include "nav-tabs.php"; ?>
 				
 				<!-- CONTENT GOES HERE -->

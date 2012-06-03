@@ -13,9 +13,9 @@
 			<?php include "templates/nav-tabs.php"; ?>
 				
 				<!-- CONTENT GOES HERE -->
-				
+				<?php include "about.php"; ?>
 		</div> <!-- /.span8 -->
-		<?php include "templates/sidebar.php"; ?> 
+		<?php include "templates/sidebar-logged-in.php"; ?> 
 	</div> <!-- /.row -->
 </div> <!-- /.container -->
 <?php include "templates/foot.php"; ?>
