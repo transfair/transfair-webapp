@@ -1,0 +1,11 @@
+label {
+	float: left;
+	clear: left;
+	margin-top: 1.5em;
+}
+
+.explanation {
+	float: right;
+	margin: 1.5em 0;
+	width: 50%;
+}
