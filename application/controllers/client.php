@@ -8,6 +8,7 @@ class Client extends CI_Controller
 
 		$this->load->helper('url');
 		$this->load->library('tank_auth');
+		$this->load->library('CleanCRMForm');
 	}
 
     function about()
@@ -19,9 +20,10 @@ class Client extends CI_Controller
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE)
+            'foot' => $this->load->view('templates/foot', array(), TRUE),
+            'content' => $this->load->view('client/about', array(), TRUE)
         );
-        $this->load->view('client/about', $data);
+        $this->load->view('templates/main', $data);
     }
 
     function register()
@@ -33,9 +35,12 @@ class Client extends CI_Controller
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE)
+            'foot' => $this->load->view('templates/foot', array(), TRUE),
+            'content' => $this->load->view('client/register', array(
+                'form' => $this->cleancrmform->cleanCRMForm("ClientRegistration") 
+            ), TRUE)
         );
-        $this->load->view('client/register', $data);
+        $this->load->view('templates/main', $data);
     }
 
 	function index()

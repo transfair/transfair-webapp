@@ -36,11 +36,10 @@ class ServiceProvider extends CI_Controller
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
             'foot' => $this->load->view('templates/foot', array(), TRUE),
-          
             'content' => $this->load->view('serviceProvider/register', array(
                     'form' => $this->cleancrmform->cleanCRMForm("ServiceProviderRegistration")
                 ), TRUE)
-        );
+            );
         $this->load->view('templates/main.php', $data);
     }
 
@@ -52,7 +51,6 @@ class ServiceProvider extends CI_Controller
 			$data['user_id']	= $this->tank_auth->get_user_id();
 			$data['username']	= $this->tank_auth->get_username();
 			$this->load->view('serviceProvider/index', $data);
-			
 		}
 	}
 	
