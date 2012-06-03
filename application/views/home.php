@@ -9,7 +9,8 @@
 <div class="container">
 	<?php include "templates/header.php"; ?>
 	<div class="row">
-		<div class="span8">
+		<div class="span9">
+			<?php include "templates/hero.php"; ?>
 			<?php include "templates/nav-tabs.php"; ?>
 				
 				<!-- CONTENT GOES HERE -->
@@ -17,6 +18,7 @@
 		</div> <!-- /.span8 -->
 		<?php include "templates/sidebar-logged-in.php"; ?> 
 	</div> <!-- /.row -->
+	<?php include "templates/big-footer.php"; ?>
 </div> <!-- /.container -->
 <?php include "templates/foot.php"; ?>
 </body></html>
