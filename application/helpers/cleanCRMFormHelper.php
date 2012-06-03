@@ -1,21 +1,23 @@
 <?php
 
-    function cleanCRMForm($fileName, $formName, $submitLabel){
-        include "formGroupMappings.php";
+    function cleanCRMForm($formName, $submitLabel){
+        include "./forms/formGroupMappings.php";
 
-        if ($formName == "SP")
+        if ($formName == "ServiceProviderRegistration"){
             $groupMatches = $ServiceProviderGroups;
-        else if ($formName == "Client")
+        } else if ($formName == "ClientRegistration") {
             $groupMatches = $ClientGroups;
-        else return "cleanCRMForm not provided with proper form name";
+        } else return "cleanCRMForm not provided with proper form name";
+        
+        $fileName = "./forms/$formName.php"
 
         $fileHandle = fopen($fileName, 'r');
         $rawString = fread($fileHandle, filesize($fileName));
         fclose($fileHandle);
 
-        preg_match('$(<form.*?)<br>$', $rawString, $formTagAndHiddenInputs);
-        $output = $formTagAndHiddenInputs[1]."\n";
-        
+        preg_match('$<form action=\'(.*?)\'.*?>.*?<table.*?>[\s]*(.*?)[\s]*<br>$', $rawString, $formActionAndHiddenInputs);
+        $output = "<input type=\"hidden\" name=\"originalFormAction\" value=\"".$formActionAndHiddenInputs[1]."\">\n".$formActionAndHiddenInputs[2]."\n";
+
         preg_match_all('$<tr><td[^>]*>([^<]*) &nbsp;$', $rawString, $fieldLabels);
         $fieldLabels = $fieldLabels[1];
         
@@ -28,7 +30,7 @@
             $currentFieldLabel = $fieldLabels[$i];
             $currentFieldInput = $fieldInputs[$i];
 
-            $currentFieldId = strtocamelcase($currentFieldLabel);
+            $currentFieldId = strToCamelCase($currentFieldLabel);
             
             $spacePosition = strpos($currentFieldInput, " ");
             
@@ -41,7 +43,7 @@
         };
 
         foreach($groupMatches as $groupDescription => $groupMembers){
-            $output .= "\t<fieldset id=\"".strtocamelcase($groupDescription)."\">\n\t\t<legend>$groupDescription</legend>\n";
+            $output .= "\t<fieldset id=\"".strToCamelCase($groupDescription)."\">\n\t\t<legend>$groupDescription</legend>\n";
             foreach($groupMembers as $memberId => $memberDescription)
                 if (array_key_exists($memberId, $fieldArray)){
                     $output .= $fieldArray[$memberId];
@@ -49,14 +51,11 @@
                 }
             $output .= "\t</fieldset>\n\n";
         }
-        $output .= "\t<input id=\"SubmitButton\" type=\"submit\" name=\"save\" value=\"$submitLabel\" />\n</form>";
 
         return $output;
     }
 
-    function strtocamelcase($str){
+    function strToCamelCase($str){
         return preg_replace_callback('#[^\w]+(.)#',
             create_function('$r', 'return strtoupper($r[1]);'), $str);
     }
-
-echo cleanCRMForm("./form.html", "SP", "Apply");
