@@ -66,6 +66,18 @@ label {
 	width: 50%;
 }
 
+.big-footer {
+	margin-top: 3em;
+}
+
+.big-footer .span3 {
+	border-top: 1px solid #ddd;
+}
+
+.big-footer h2 {
+	font-size: 14px;
+}
+
 .connect,
 .copyinfo {
 	float: right;
