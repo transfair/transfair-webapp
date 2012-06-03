@@ -14,7 +14,7 @@
 				
 				<!-- CONTENT GOES HERE -->
 				
-		</div> <!-- /.span8 -->
+		</div> <!-- /.span9 -->
 		<?php include "sidebar.php"; ?> 
 	</div> <!-- /.row -->
 	<?php include "footer.php"; ?>

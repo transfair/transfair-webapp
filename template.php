@@ -19,7 +19,7 @@
 				<p>Or <a href="#">learn more about us</a> and what we do.</p>
 			</div>
 			
-		</div> <!-- /.span8 -->
+		</div> <!-- /.span9 -->
 		<?php include "sidebar.php"; ?> 
 	</div> <!-- /.row -->
 	<?php include "big-footer.php"; ?>

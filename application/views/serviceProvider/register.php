@@ -9,7 +9,7 @@
 <div class="container">
     <?php echo $header; ?>
     <div class="row">
-        <div class="span8">
+        <div class="span9">
             <?php echo $hero; ?>		
             <?php echo $navtabs; ?>
 
@@ -27,7 +27,7 @@
                     <?php echo $form; ?>
                     <input type='submit' value='Apply now!' class="btn btn-primary" />
                 </form>
-        </div> <!-- /.span8 -->
+        </div> <!-- /.span9 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
     <?php echo $footer; ?>		

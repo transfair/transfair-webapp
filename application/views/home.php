@@ -14,7 +14,7 @@
 			<?php echo $navtabs; ?>
 				<!-- CONTENT GOES HERE -->
 				<?php include "about.php"; ?>
-		</div> <!-- /.span8 -->
+		</div> <!-- /.span9 -->
 		<?php echo $sidebar; ?>
 	</div> <!-- /.row -->
 	<?php echo $footer; ?>
