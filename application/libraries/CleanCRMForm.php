@@ -50,7 +50,7 @@ class CleanCRMForm {
             
             $currentFieldInput = substr($currentFieldInput, 0, $spacePosition)." id=\"$currentFieldId\" aria-describedby=\"ExplainationFor$currentFieldId\"".substr($currentFieldInput, $spacePosition);
 
-            $currentFieldHtml = "\t\t<label for=\"$currentFieldId\">\n\t\t\t<span>$currentFieldLabel</span>\n\t\t\t$currentFieldInput\n\t\t</label>\n"; 
+            $currentFieldHtml = "\t\t<label for=\"$currentFieldId\">\n\t\t\t<span>$currentFieldLabel</span>\n\t\t</label>\n\t\t$currentFieldInput\n"; 
 
             $fieldArray[$currentFieldId] = $currentFieldHtml;
             

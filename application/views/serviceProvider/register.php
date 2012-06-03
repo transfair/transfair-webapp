@@ -13,11 +13,21 @@
             <?php echo $navtabs; ?>
 
             <!-- CONTENT GOES HERE -->
-            <form action='#' method='post'>
-                <?php echo $form; ?>
-                <input type='submit' value='Apply now!' />
-            </form>
+            <div class="content">
+                <p>
+                    <header><h2>We find international jobs that match your skillset.</h2></header>
+                    <ul>
+                        <li>Fair wages (see here).</li>
+                        <li>Opportunity to work from home for international customers.</li>
+<li>Improve your skills with the feedback from mentors and customers.</li>
+                    </ul>
+                </p> 
             
+                <form action='#' method='post' class="well">
+                    <?php echo $form; ?>
+                    <input type='submit' value='Apply now!' />
+                </form>
+            </div>    
         </div> <!-- /.span8 -->
         <?php echo $sidebar; ?>
     </div> <!-- /.row -->
