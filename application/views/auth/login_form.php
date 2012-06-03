@@ -57,5 +57,5 @@ $captcha = array(
 	<p><?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?></p>
 	<p><?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?></p>
 </fieldset>
-<?php echo form_submit('submit', 'Login', 'class="btn btn-primary"'); ?>
+<?php echo form_submit('submit', 'Login', 'class="btn "'); ?>
 <?php echo form_close(); ?>
