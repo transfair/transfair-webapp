@@ -4,19 +4,19 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<?php include "./templates/head.php"; ?>
+<?php include "templates/head.php"; ?>
 <body>
 <div class="container">
-	<?php include "./templates/header.php"; ?>
+	<?php include "templates/header.php"; ?>
 	<div class="row">
 		<div class="span8">
-			<?php include "./templates/nav-tabs.php"; ?>
+			<?php include "templates/nav-tabs.php"; ?>
 				
 				<!-- CONTENT GOES HERE -->
 				
 		</div> <!-- /.span8 -->
-		<?php include "./templates/sidebar.php"; ?> 
+		<?php include "templates/sidebar.php"; ?> 
 	</div> <!-- /.row -->
 </div> <!-- /.container -->
-<?php include "./templates/foot.php"; ?>
+<?php include "templates/foot.php"; ?>
 </body></html>
