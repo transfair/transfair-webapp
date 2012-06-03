@@ -12,6 +12,10 @@ $('fieldset').each(function(){
     }).on('click',function(event){
         event.preventDefault();
     });
+    $self.find('legend').css({
+	    'position': 'absolute',
+	    'left': '-999em'
+    });
     $fieldsetWrapper.before($fieldlabel);
     $fieldsetWrapper.hide().parent().addClass('closed');
 });
