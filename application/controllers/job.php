@@ -23,7 +23,7 @@ class Job extends CI_Controller
             'hero' => $this->load->view('templates/hero', array(), TRUE),
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
-            'footer' => $this->load->view('templates/footer', array(), TRUE)
+            'footer' => $this->load->view('templates/footer', array(), TRUE),
             'foot' => $this->load->view('templates/foot', array(), TRUE)
         );
         if (!$this->tank_auth->is_logged_in()) {
