@@ -49,9 +49,16 @@ body {
 	line-height: 1.8;
 }
 
-.content p {
+.content p,
+.content li {
 	font-family: Georgia;
 	margin: 1.25em 0;
+}
+
+.fieldLabel {
+	display: block;
+	font-size: 18px;
+	margin: 0 0 0.5em;
 }
 
 .big-footer {
