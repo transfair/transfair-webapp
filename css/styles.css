@@ -1,9 +1,45 @@
-.page-header h1 {
+.page-header {
+	border-bottom: none;
+}
+
+.page-header h1 a {
+	display: block;
 	text-indent: -999em;
 	overflow: hidden;
 	width: 192px;
 	height: 50px;
 	background-image: url(/img/logo.png);
+	margin-left: 12px;
+}
+
+.hero {
+	background-image: url(/img/keyboard.jpg);
+	background-size: cover;
+	min-height: 150px;
+	margin-bottom: 1em;
+}
+
+.hero strong {
+	display: block;
+	width: 30%;
+	padding: 2em 24px;
+	font-family: Georgia;
+	font-size: 1.8em;
+	line-height: 1.5;
+	font-style: italic;
+	font-weight: normal;
+	color: #fff;
+}
+
+.content {
+	padding: 12px;
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.content p {
+	font-family: Georgia;
+	margin: 1.25em 0;
 }
 
 label {
