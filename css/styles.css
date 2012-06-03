@@ -1,3 +1,11 @@
+.page-header h1 {
+	text-indent: -999em;
+	overflow: hidden;
+	width: 192px;
+	height: 50px;
+	background-image: url(/img/logo.png);
+}
+
 label {
 	float: left;
 	clear: left;
@@ -8,4 +16,18 @@ label {
 	float: right;
 	margin: 1.5em 0;
 	width: 50%;
+}
+
+.connect,
+.copyinfo {
+	float: right;
+	clear: right;
+	width: 350px;
+	text-align: right;
+}
+
+.copyinfo {
+	color: #666;
+	font-size: 11px;
+	margin-top: 10px;
 }
