@@ -17,9 +17,9 @@
             <div class="content">
                 <h2>We find international jobs that match your skillset.</h2>
                 <ul>
-                    <li>Fair wages (see here).</li>
-                    <li>Opportunity to work from home for international customers.</li>
-                    <li>Improve your skills with the feedback from mentors and customers.</li>
+                    <li>Earn a fair wage</li>
+                    <li>Work from home for international customers.</li>
+                    <li>Improve your skills with feedback from mentors and customers.</li>
                 </ul>
             </div>    
             
