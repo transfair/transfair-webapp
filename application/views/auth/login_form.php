@@ -41,7 +41,6 @@ $captcha = array(
 		<span style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></span>
 	</label>
 		<?php echo form_input($login); ?>
-		<span style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></span>
 
 	<label for="<?php echo $password['id']; ?>">
 		<span>Password</span>	
