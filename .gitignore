@@ -1,2 +1,3 @@
-.idea/
 .swp
+/.idea*
+.DS_STORE
