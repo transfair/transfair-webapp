@@ -10,6 +10,30 @@ class Client extends CI_Controller
 		$this->load->library('tank_auth');
 	}
 
+    function about()
+    {
+        $data = array(
+            'head' => $this->load->view('templates/head', array(), TRUE),
+            'header' => $this->load->view('templates/header', array(), TRUE),
+            'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
+            'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
+            'foot' => $this->load->view('templates/foot', array(), TRUE)
+        );
+        $this->load->view('client/about', $data);
+    }
+
+    function register()
+    {
+        $data = array(
+            'head' => $this->load->view('templates/head', array(), TRUE),
+            'header' => $this->load->view('templates/header', array(), TRUE),
+            'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
+            'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
+            'foot' => $this->load->view('templates/foot', array(), TRUE)
+        );
+        $this->load->view('client/register', $data);
+    }
+
 	function index()
 	{
 		if (!$this->tank_auth->is_logged_in()) {

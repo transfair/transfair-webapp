@@ -1,3 +1,4 @@
 <header class="header">
-	<h1><a href="/">Transfair</a></h1>
+	<h1><?php echo anchor('/', 'Transfair') ?></h1>
 </header>
+
