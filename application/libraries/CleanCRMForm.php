@@ -1,7 +1,25 @@
 <?php
 
-    function cleanCRMForm($formName, $submitLabel){
-        include "./forms/formGroupMappings.php";
+/**
+ * Provides access to Zoho API.
+ *
+ * Data fetched from Zoho is parsed and put into Entities which are defined at the bottom
+ *
+ * Usage:
+ * $this->load->library('ZohoClient');
+ * $contacts = $this->zohoclient->getContacts(); // returns an array of Contact instances
+ */
+class CleanCRMForm {
+
+    public function __construct() {
+		$this->ci =& get_instance();
+
+		$this->ci->load->helper('file');
+
+    }
+
+    public function cleanCRMForm($formName){
+        require "forms/formGroupMappings.php";
 
         if ($formName == "ServiceProviderRegistration"){
             $groupMatches = $ServiceProviderGroups;
@@ -9,11 +27,7 @@
             $groupMatches = $ClientGroups;
         } else return "cleanCRMForm not provided with proper form name";
         
-        $fileName = "./forms/$formName.php"
-
-        $fileHandle = fopen($fileName, 'r');
-        $rawString = fread($fileHandle, filesize($fileName));
-        fclose($fileHandle);
+        $rawString = read_file("application/libraries/forms/$formName.html");
 
         preg_match('$<form action=\'(.*?)\'.*?>.*?<table.*?>[\s]*(.*?)[\s]*<br>$', $rawString, $formActionAndHiddenInputs);
         $output = "<input type=\"hidden\" name=\"originalFormAction\" value=\"".$formActionAndHiddenInputs[1]."\">\n".$formActionAndHiddenInputs[2]."\n";
@@ -30,7 +44,7 @@
             $currentFieldLabel = $fieldLabels[$i];
             $currentFieldInput = $fieldInputs[$i];
 
-            $currentFieldId = strToCamelCase($currentFieldLabel);
+            $currentFieldId = $this->strToCamelCase($currentFieldLabel);
             
             $spacePosition = strpos($currentFieldInput, " ");
             
@@ -43,7 +57,7 @@
         };
 
         foreach($groupMatches as $groupDescription => $groupMembers){
-            $output .= "\t<fieldset id=\"".strToCamelCase($groupDescription)."\">\n\t\t<legend>$groupDescription</legend>\n";
+            $output .= "\t<fieldset id=\"".$this->strToCamelCase($groupDescription)."\">\n\t\t<legend>$groupDescription</legend>\n";
             foreach($groupMembers as $memberId => $memberDescription)
                 if (array_key_exists($memberId, $fieldArray)){
                     $output .= $fieldArray[$memberId];
@@ -55,7 +69,8 @@
         return $output;
     }
 
-    function strToCamelCase($str){
+    protected function strToCamelCase($str){
         return preg_replace_callback('#[^\w]+(.)#',
             create_function('$r', 'return strtoupper($r[1]);'), $str);
     }
+}

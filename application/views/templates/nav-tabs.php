@@ -1,7 +1,7 @@
 	<nav>
 		<ul class="nav nav-tabs">
-			<li><a href="./">About Transfair</a></li>
-			<li><a href="./createJob">Create a job</a></li>
-			<li><a href="./becomePartner">Become a partner</a></li>
+			<li><?php echo anchor('/', 'About Transfair') ?><</li>
+            <li><?php echo anchor('/client/about', 'Create a job') ?></li>
+			<li><?php echo anchor('/serviceProvider/about', 'Become a partner') ?></li>
 		</ul>
 	</nav>
