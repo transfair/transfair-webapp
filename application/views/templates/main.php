@@ -4,20 +4,22 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<?php include "head.php"; ?>
+<?php echo $head; ?>
 <body>
 <div class="container">
-	<?php include "header.php"; ?>
+	<?php echo $header; ?>
 	<div class="row">
 		<div class="span9">
-			<?php include "nav-tabs.php"; ?>
-				
-				<!-- CONTENT GOES HERE -->
-				
-		</div> <!-- /.span8 -->
-		<?php include "sidebar.php"; ?> 
+            <?php echo $hero; ?>				
+			<?php echo $navtabs; ?>
+                
+            <div class="content">
+                <?php echo $content; ?>
+            </div>
+		</div> <!-- /.span9 -->
+		<?php echo $sidebar; ?>
 	</div> <!-- /.row -->
-	<?php include "footer.php"; ?>
+	<?php echo $footer; ?>
 </div> <!-- /.container -->
-<?php include "foot.php"; ?>
+<?php echo $foot; ?>
 </body></html>

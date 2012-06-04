@@ -1,21 +1,11 @@
 <?php
 
-/**
- * Provides access to Zoho API.
- *
- * Data fetched from Zoho is parsed and put into Entities which are defined at the bottom
- *
- * Usage:
- * $this->load->library('ZohoClient');
- * $contacts = $this->zohoclient->getContacts(); // returns an array of Contact instances
- */
 class CleanCRMForm {
 
     public function __construct() {
 		$this->ci =& get_instance();
 
 		$this->ci->load->helper('file');
-
     }
 
     public function cleanCRMForm($formName){
@@ -32,10 +22,10 @@ class CleanCRMForm {
         preg_match('$<form action=\'(.*?)\'.*?>.*?<table.*?>[\s]*(.*?)[\s]*<br>$', $rawString, $formActionAndHiddenInputs);
         $output = "<input type=\"hidden\" name=\"originalFormAction\" value=\"".$formActionAndHiddenInputs[1]."\">\n".$formActionAndHiddenInputs[2]."\n";
 
-        preg_match_all('$<tr><td[^>]*>([^<]*) &nbsp;$', $rawString, $fieldLabels);
+        preg_match_all('$<tr>[\s]*<td[^>]*>[\s]*([^<]*) &nbsp;$', $rawString, $fieldLabels);
         $fieldLabels = $fieldLabels[1];
         
-        preg_match_all('$</td><td[^>]*>(.*?)</td>$', $rawString, $fieldInputs);
+        preg_match_all('$</td>[\s]*<td[^>]*>[\s]*(.*?)</td>$', $rawString, $fieldInputs);
         $fieldInputs = $fieldInputs[1];
         
         $fieldArray = array();
