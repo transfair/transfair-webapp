@@ -4,7 +4,13 @@
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<?php echo $head; ?>
+<head>
+	<meta charset="utf-8">
+	<title>Transfair</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="<?php echo base_url() . 'bootstrap/css/bootstrap.min.css'; ?>">
+	<link rel="stylesheet" href="<?php echo base_url() . 'css/styles.css'; ?>">
+</head>
 <body>
 <div class="container">
 	<?php echo $header; ?>
@@ -21,5 +27,7 @@
 	</div> <!-- /.row -->
 	<?php echo $footer; ?>
 </div> <!-- /.container -->
-<?php echo $foot; ?>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="<?php echo base_url() . 'js/libs/jquery-1.7.2.min.js"><\/script>'; ?>');</script>
+<script src="<?php echo base_url() . 'js/scripts.js' ?>"></script>
 </body></html>

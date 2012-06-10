@@ -9,18 +9,23 @@ class ServiceProvider extends CI_Controller
 		$this->load->helper('url');
 		$this->load->library('tank_auth');
 		$this->load->library('CleanCRMForm');
+		$this->load->library('UserData');
 	}
 
     function about()
     {
         $data = array(
-            'head' => $this->load->view('templates/head', array(), TRUE),
             'header' => $this->load->view('templates/header', array(), TRUE),
             'hero' => $this->load->view('templates/hero', array(), TRUE),
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
-            'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
+			'sidebar' => $this->userdata->get_view_for_user(array(
+				'logged_in' => array(	
+					'view' => 'templates/sidebar-logged-in', 
+					'data' => array()),
+				'default' => array(	
+					'view' => 'templates/sidebar', 
+					'data' => array()))),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE),
             'content' => $this->load->view('serviceProvider/about', array(), TRUE)
         );
         $this->load->view('templates/main.php', $data);
@@ -29,13 +34,11 @@ class ServiceProvider extends CI_Controller
     function register()
     {
         $data = array(
-            'head' => $this->load->view('templates/head', array(), TRUE),
             'header' => $this->load->view('templates/header', array(), TRUE),
             'hero' => $this->load->view('templates/hero', array(), TRUE),
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE),
             'content' => $this->load->view('serviceProvider/register', array(
                     'form' => $this->cleancrmform->cleanCRMForm("ServiceProviderRegistration")
                 ), TRUE)
@@ -52,8 +55,7 @@ class ServiceProvider extends CI_Controller
 			$data['username']	= $this->tank_auth->get_username();
 			$this->load->view('serviceProvider/index', $data);
 		}
-	}
-	
+	}	
 }
 
 /* End of file welcome.php */

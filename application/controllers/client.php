@@ -9,18 +9,23 @@ class Client extends CI_Controller
 		$this->load->helper('url');
 		$this->load->library('tank_auth');
 		$this->load->library('CleanCRMForm');
+		$this->load->library('UserData');
 	}
 
     function about()
     {
         $data = array(
-            'head' => $this->load->view('templates/head', array(), TRUE),
-            'header' => $this->load->view('templates/header', array(), TRUE),
+			'header' => $this->load->view('templates/header', array(), TRUE),
             'hero' => $this->load->view('templates/hero', array(), TRUE),
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
-            'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
+			'sidebar' => $this->userdata->get_view_for_user(array(
+				'logged_in' => array(	
+					'view' => 'templates/sidebar-logged-in', 
+					'data' => array()),
+				'default' => array(	
+					'view' => 'templates/sidebar', 
+					'data' => array()))),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE),
             'content' => $this->load->view('client/about', array(), TRUE)
         );
         $this->load->view('templates/main', $data);
@@ -29,13 +34,11 @@ class Client extends CI_Controller
     function register()
     {
         $data = array(
-            'head' => $this->load->view('templates/head', array(), TRUE),
             'header' => $this->load->view('templates/header', array(), TRUE),
             'hero' => $this->load->view('templates/hero', array(), TRUE),
             'navtabs' => $this->load->view('templates/nav-tabs', array(), TRUE),
             'sidebar' => $this->load->view('templates/sidebar', array(), TRUE),
             'footer' => $this->load->view('templates/footer', array(), TRUE),
-            'foot' => $this->load->view('templates/foot', array(), TRUE),
             'content' => $this->load->view('client/register', array(
                 'form' => $this->cleancrmform->cleanCRMForm("ClientRegistration") 
             ), TRUE)
@@ -45,14 +48,7 @@ class Client extends CI_Controller
 
 	function index()
 	{
-		if (!$this->tank_auth->is_logged_in()) {
-			redirect('/auth/login/');
-		} else {
-			$data['user_id']	= $this->tank_auth->get_user_id();
-			$data['username']	= $this->tank_auth->get_username();
-			$this->load->view('client/index', $data);
-			
-		}
+		redirect('client/about');
 	}
 	
 }
